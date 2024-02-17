@@ -86,6 +86,14 @@ if (DEFINED ENV{AT_RAINMAKER_SUPPORT})
     endif()
 endif()
 
+# add custom cmd extra components
+if (DEFINED ENV{AT_CUSTOM_COMMAND_SUPPORT})
+    if (NOT DEFINED ENV{CUSTOM_COMMAND_PATH})
+        set(CUSTOM_COMMAND_PATH ${CMAKE_SOURCE_DIR}/components/at_custom_cmd/esp-at-custom-cmd)
+        set(EXTRA_COMPONENT_DIRS ${CUSTOM_COMMAND_PATH}/components)
+    endif()
+endif()
+
 include(${IDF_PATH}/tools/cmake/project.cmake)
 
 project(esp-at)

@@ -109,6 +109,15 @@ void esp_at_main_preprocess(void);
 bool esp_at_rainmaker_cmd_regist(void);
 #endif
 
+#ifdef CONFIG_AT_CUSTOM_COMMAND_SUPPORT
+/**
+ * @brief regist at custom command set. If not,you can not use AT custom command
+ *
+ */
+bool esp_at_custom_cmd_regist(void);
+#endif
+
+
 /**
  * @brief init storage mode of at parameters
  */

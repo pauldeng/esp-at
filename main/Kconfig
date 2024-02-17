@@ -339,4 +339,10 @@ config AT_RAINMAKER_COMMAND_SUPPORT
     default n
     depends on AT_ENABLE
     depends on IDF_TARGET_ESP32C3
+
+config AT_CUSTOM_COMMAND_SUPPORT
+    bool "AT custom command support."
+    default y
+    depends on AT_ENABLE
+    depends on IDF_TARGET_ESP32C3
 endmenu

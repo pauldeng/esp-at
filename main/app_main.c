@@ -270,5 +270,11 @@ void app_main(void)
     }
 #endif
 
+#ifdef CONFIG_AT_CUSTOM_COMMAND_SUPPORT
+    if(esp_at_custom_cmd_regist() == false) {
+        printf("regist custom cmd fail\r\n");
+    }
+#endif
+
     at_custom_init();
 }
