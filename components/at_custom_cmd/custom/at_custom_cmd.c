@@ -78,4 +78,6 @@ bool esp_at_custom_cmd_regist(void)
     return esp_at_custom_cmd_array_regist(at_custom_cmd, sizeof(at_custom_cmd) / sizeof(esp_at_cmd_struct));
 }
 
-//ESP_AT_CMD_SET_INIT_FN(esp_at_custom_cmd_regist);
+#ifdef ESP_AT_CMD_SET_INIT_FN
+ESP_AT_CMD_SET_INIT_FN(esp_at_custom_cmd_regist);
+#endif
